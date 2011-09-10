@@ -39,6 +39,9 @@ var Sculpture = function(title) {
 		var previous = this._collection.length-1;
 		return this._collection[previous];
 	};
+	model.count = function() {
+		return this._collection.length;
+	};
 	
 	return model;
 };

@@ -58,5 +58,14 @@ test("Does Sculpture.each() work?", function() {
 	});
 	equal(true, stringtest, "The titles of the objects added all were as expected when running through the each() loop.");
 	equal(3, records.length, "We added three records to the model and so we would expect there to be three calls to the each() function's iterator.");
-})
+});
+
+test("Does Sculpture.count() work?", function() {
+	var tests = Sculpture("Tests");
+	var one = { 'title': 'one' };
+	var two = { 'title': 'two' };
+	var three = { 'title': 'three' };
+	tests.add(one); tests.add(two); tests.add(three);
+	equal(3, tests.count(), "We added three records so we expect there to be three records in the model.");
+});
 
