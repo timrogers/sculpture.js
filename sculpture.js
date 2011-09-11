@@ -45,6 +45,9 @@ var Sculpture = function(title) {
 	model.all = function() {
 		return this._collection;
 	};
+	model.empty = function() {
+		this._collection = [];
+	};
 	
 	return model;
 };

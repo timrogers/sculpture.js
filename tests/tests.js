@@ -79,3 +79,13 @@ test("Does Sculpture.all() work?", function() {
 	equal(3, all.length, "We added three records so we expect there to be three records when we return all of them.")
 })
 
+test("Does Sculpture.empty() work?", function() {
+	var tests = Sculpture("Tests");
+	var one = { 'title': 'one' };
+	var two = { 'title': 'two' };
+	var three = { 'title': 'three' };
+	tests.add(one); tests.add(two); tests.add(three);
+	tests.empty();
+	equal(0, tests.count(), "We added some records and then cleared them, so we expect there to be no records left.");
+});
+

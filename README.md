@@ -17,6 +17,7 @@ __Included are unit tests to make sure that everything works as expected - these
 * Get the first or last item
 * Find out how many items there are in the model
 * Get all the articles back in an array
+* Clear everything that's in the model
 
 ## How to use
 
@@ -45,6 +46,8 @@ __Included are unit tests to make sure that everything works as expected - these
 				Articles.each(function(item) {
 					alert(item.title);
 				});
+				
+				Articles.empty();
 				
 ## To-do
 
