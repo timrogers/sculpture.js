@@ -42,6 +42,9 @@ var Sculpture = function(title) {
 	model.count = function() {
 		return this._collection.length;
 	};
+	model.all = function() {
+		return this._collection;
+	};
 	
 	return model;
 };

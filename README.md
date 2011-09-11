@@ -16,6 +16,7 @@ __Included are unit tests to make sure that everything works as expected - these
 * Loop through all the items and do something with them
 * Get the first or last item
 * Find out how many items there are in the model
+* Get all the articles back in an array
 
 ## How to use
 
@@ -37,6 +38,7 @@ __Included are unit tests to make sure that everything works as expected - these
 				var last_article = Articles.last();
 				var fifth_article = Articles.get(5);
 				var number_of_articles = Articles.count();
+				var all_the_articles = Articles.all();
 				
 				document.write(Articles.title());
 				
