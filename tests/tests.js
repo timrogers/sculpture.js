@@ -89,3 +89,25 @@ test("Does Sculpture.empty() work?", function() {
 	equal(0, tests.count(), "We added some records and then cleared them, so we expect there to be no records left.");
 });
 
+module("Events");
+
+test("Does Sculpture.onChange() work?", function() {
+	var tests = Sculpture("Tests");
+	tests.onChange(function(model) {
+		changedetected = true;
+	});
+	var one = { 'title': 'one' };
+	tests.add(one);
+	equal(true, changedetected, "We added a record and the onChange function fired.");
+	changedetected = false;
+	tests.empty();
+	equal(true, changedetected, "We cleared all records and the onChange function fired.");
+	changedetected = false;
+	tests.onChange(false);
+	tests.empty();
+	equal(false, changedetected, "We removed the onChange binding and it didn't run next time there was a change.");
+	
+	
+	
+});
+

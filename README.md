@@ -18,11 +18,14 @@ __Included are unit tests to make sure that everything works as expected - these
 * Find out how many items there are in the model
 * Get all the articles back in an array
 * Clear everything that's in the model
+* Fire an event when a record is added or the model is cleared
 
 ## How to use
 
 				Articles = new Sculpture("Article");
-				
+				Articles.onChange(function(model) {
+					alert("Change is bad!");
+				});
 				var article1 = {};
 				article1.title = "My first article";
 				article1.author = "Tim Rogers";

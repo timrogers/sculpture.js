@@ -4,9 +4,19 @@ var Sculpture = function(title) {
 	model._lastId = 0;
 	model._title = title;
 	model._collection = [];
+	model._onchange = false;
 	
 	model.title = function() {
 		return this._title;
+	};
+	
+	model.onChange = function(handler) {
+		if (handler != false) {
+			this._onchange = handler;
+		} else {
+			this._onchange = false;
+		}
+		
 	};
 	
 	model.add = function(data) {
@@ -15,6 +25,9 @@ var Sculpture = function(title) {
 		data._id = this._lastId;
 		
 		this._collection.push(data);
+		if (this._onchange != false) {
+			this._onchange(this);
+		}
 		return data._id;
 		
 	};
@@ -47,6 +60,9 @@ var Sculpture = function(title) {
 	};
 	model.empty = function() {
 		this._collection = [];
+		if (this._onchange != false) {
+			this._onchange(this);
+		}
 	};
 	
 	return model;
